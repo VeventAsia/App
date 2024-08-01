@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Request permission to use location services when the app is in use -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to show nearby events.</string>
+
+    <!-- Optional: Request permission to use location services at any time, even when the app is in the background -->
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We need your location to provide a more personalized experience, even when the app is not in use.</string>
+
+    <!-- Optional: Request permission to use location services for precise locations -->
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    <dict>
+        <key>NSLocationTemporaryUsageDescription</key>
+        <string>We need your precise location to provide accurate event information.</string>
+    </dict>
+
+    <!-- Other existing keys in your plist file -->
+</dict>
+</plist>
