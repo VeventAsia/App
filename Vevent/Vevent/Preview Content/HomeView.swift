@@ -8,6 +8,7 @@ struct HomeView: View {
     @State private var showHostEventScreen = false
     @State private var isLocationPickerPresented = false
     @State private var selectedLocation = ""
+    @State private var selectedFilter: String = "All Events" // For filter selection
 
     var body: some View {
         GeometryReader { geometry in
@@ -46,6 +47,38 @@ struct HomeView: View {
                                 .cornerRadius(10)
                                 .frame(width: 44, height: 44)
                         }
+                        
+                        // Filter Button
+                        Menu {
+                            Button(action: { selectedFilter = "House Party" }) {
+                                Label("House Party", systemImage: "house")
+                            }
+                            Button(action: { selectedFilter = "Music" }) {
+                                Label("Music", systemImage: "music.note")
+                            }
+                            Button(action: { selectedFilter = "Concert" }) {
+                                Label("Concert", systemImage: "play.circle")
+                            }
+                            Button(action: { selectedFilter = "Club Parties" }) {
+                                Label("Club Parties", systemImage: "star")
+                            }
+                            Divider()
+                            Button(action: { selectedFilter = "Public" }) {
+                                Label("Public", systemImage: "globe")
+                            }
+                            Button(action: { selectedFilter = "Private" }) {
+                                Label("Private", systemImage: "lock")
+                            }
+                        } label: {
+                            Image(systemName: "line.horizontal.3.decrease.circle")
+                                .font(.title2)
+                                .foregroundColor(.purple)
+                                .padding(10)
+                                .background(Color("NeonPurple"))
+                                .clipShape(Circle())
+                                .frame(width: 44, height: 44)
+                        }
+
                     }
                 }
                 .padding()
@@ -177,7 +210,7 @@ struct EventCard: View {
                             .cornerRadius(10)
                     }
                 }
-                if isLive{
+                if isLive {
                     Button(action: {
                         // Live concert action
                     }) {
